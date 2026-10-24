@@ -3,204 +3,473 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ATIGO PAUL ODOCH - Software Engineer | Cybersecurity Analyst | Pentester</title>
-  <meta name="description" content="ATIGO PAUL ODOCH - Software Engineer, Cybersecurity Analyst, Network Engineer, Penetration Tester based in Kampala, Uganda. Secure systems, vulnerability assessments, ethical hacking.">
-  <link rel="stylesheet" href="assets/css/style.css">
+  <title>atg | cybersecurity expert</title>
+  <meta name="description" content="Atigo Paul Odoch (atg) is a cybersecurity expert, penetration tester and software engineer in Kampala, Uganda. SMB and Windows exploit research, network security and secure development.">
+  <meta name="theme-color" content="#0c0b0a">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="atg | cybersecurity expert">
+  <meta property="og:description" content="Cybersecurity expert, penetration tester and software engineer in Kampala, Uganda. Exploit research, network security and secure systems.">
+  <meta property="og:image" content="assets/images/atigo-og.jpg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Fira+Code:wght@400;500;600&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" media="print" onload="this.media='all'">
-<script>
-if ('loading' in HTMLLinkElement.prototype) {
-  document.querySelectorAll('link[rel=stylesheet][media=print]').forEach( link => {
-    link.media = 'all';
-  });
-} else {
-  document.querySelectorAll('link[rel=stylesheet][media=print]').forEach( link => {
-    link.onload = () => {
-      link.media = 'all';
-    };
-  });
-}
-</script>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <script>document.documentElement.classList.add('js');</script>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script src="assets/js/main.js" defer></script>
 </head>
 <body>
-  <nav class="nav">
-    <div class="nav-content">
-      <a href="#home" class="logo nav-link">ATIGO PAUL</a>
-      <button class="hamburger" aria-label="Toggle menu">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-      <ul class="nav-menu">
-        <a href="#home" class="nav-link active"><i class="fas fa-home"></i> Home</a>
-        <a href="#about" class="nav-link"><i class="fas fa-user"></i> About</a>
-        <a href="#experience" class="nav-link"><i class="fas fa-briefcase"></i> Experience</a>
-        <a href="#projects" class="nav-link"><i class="fas fa-laptop-code"></i> Projects</a>
-        <a href="#contact" class="nav-link"><i class="fas fa-envelope"></i> Contact</a>
-        <a href="cv.html" class="nav-link download-btn">CV</a>
-      </ul>
-    </div>
-  </nav>
+  <a class="skip-link" href="#main">Skip to content</a>
 
-  <main>
-    <section id="home" class="section hero">
+  <header class="nav" id="nav">
+    <div class="nav-inner">
+      <a href="#top" class="wordmark" aria-label="atg, back to top">atg</a>
+      <button class="hamburger" id="menuToggle" aria-label="Open menu" aria-controls="navMenu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="nav-menu" id="navMenu" aria-label="Main navigation">
+        <a href="#about" class="nav-link">About</a>
+        <a href="#expertise" class="nav-link">Expertise</a>
+        <a href="#projects" class="nav-link">Projects</a>
+        <a href="#certifications" class="nav-link">Certifications</a>
+        <a href="#contact" class="nav-link">Contact</a>
+        <a href="cv.html" class="nav-cv">Check my CV</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="top">
+      <div class="container hero-inner">
+        <div class="hero-copy">
+          <p class="hero-eyebrow"><span class="status-dot" aria-hidden="true"></span>Kampala, Uganda · Open to security work</p>
+          <h1 aria-label="I break systems to secure them.">I break systems to <em class="scramble" data-text="secure" aria-hidden="true">secure</em> them.</h1>
+          <p class="hero-sub">Cybersecurity expert and software engineering student testing networks, writing exploit proof-of-concepts, and building systems that hold.</p>
+          <div class="hero-actions">
+            <a href="#projects" class="btn btn-primary">See my work</a>
+            <a href="cv.html" class="btn btn-ghost">Check my CV</a>
+          </div>
+        </div>
+
+        <div class="hero-media">
+          <div class="portrait-frame">
+            <img
+              src="assets/images/atigo-720.webp"
+              srcset="assets/images/atigo-720.webp 720w, assets/images/atigo-1200.webp 1200w"
+              sizes="(max-width: 900px) 88vw, 42vw"
+              width="1086" height="1448"
+              alt="Portrait of Atigo Paul Odoch in front of a brick church courtyard"
+              fetchpriority="high">
+          </div>
+          <div class="portrait-caption">
+            <span>ATIGO PAUL ODOCH</span>
+            <span>SEC / 2026</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee-track">
+        <span>Penetration testing</span><span>/</span>
+        <span>Network security</span><span>/</span>
+        <span>SMB &amp; Windows research</span><span>/</span>
+        <span>Linux</span><span>/</span>
+        <span>Python</span><span>/</span>
+        <span>Threat hunting</span><span>/</span>
+        <span>Secure development</span><span>/</span>
+        <span>Penetration testing</span><span>/</span>
+        <span>Network security</span><span>/</span>
+        <span>SMB &amp; Windows research</span><span>/</span>
+        <span>Linux</span><span>/</span>
+        <span>Python</span><span>/</span>
+        <span>Threat hunting</span><span>/</span>
+        <span>Secure development</span><span>/</span>
+      </div>
+    </div>
+
+    <section class="section about" id="about">
       <div class="container">
-        <div class="hero-grid">
-          <div class="card intro-card">
-            <h1 class="card-heading">Hi, I'm ATIGO PAUL ODOCH</h1>
-            <p class="card-sub">Software Engineer specializing in secure systems</p>
-            <div class="typewriter">
-              <span class="typewriter__static">I am a </span>
-              <span class="typewriter__dynamic"></span>
-            </div>
-            <i class="fas fa-terminal minimal-icon"></i>
+        <div class="section-head reveal">
+          <h2>Built for the offence,<br>trusted on the defence.</h2>
+          <p>I work from packet capture to production code. My security research is public, reproducible and written to help defenders close the gaps.</p>
+        </div>
+
+        <div class="stats reveal" aria-label="Key facts">
+          <div class="stat">
+            <span class="stat-value" data-live="repos">4</span>
+            <span class="stat-label">Public repositories</span>
+          </div>
+          <div class="stat">
+            <span class="stat-value">11</span>
+            <span class="stat-label">Anthropic certificates</span>
+          </div>
+          <div class="stat">
+            <span class="stat-value">06</span>
+            <span class="stat-label">CVE proof-of-concepts</span>
+          </div>
+          <div class="stat">
+            <span class="stat-value">04</span>
+            <span class="stat-label">Core disciplines</span>
+          </div>
+        </div>
+
+        <div class="about-grid">
+          <div class="about-copy reveal">
+            <p>I am a cybersecurity analyst, network engineer and software engineering student at Mbarara University of Science and Technology. I run vulnerability assessments, perform ethical hacking and build secure systems end to end.</p>
+            <p>My public research focuses on SMB and Windows attack paths: Samba pre-auth RCE, EternalBlue, SMBGhost and PwnKit. I also work the other side: Django and Node services, hardened APIs and monitored networks.</p>
+            <p>Currently an AI engineering intern at Deep Shift AI, training and evaluating models for Ugandan contexts, and leading the cybersecurity division at MUCOSA. I also take on general software design and build web platforms through <a href="https://github.com/GrooveStreet-Software" target="_blank" rel="noopener">GrooveStreet Software</a>.</p>
+            <p class="about-personal">Languages: English, Langi, Luganda, Lusoga, Kiswahili, Runyankore. Off the clock: music, art, video games, workouts, rugby and vibe coding.</p>
           </div>
 
-          <div class="card expertise-card">
-            <p class="card-sub"><b><u>PROFESSIONAL EXPERTISE</u></b></p>
-            <div class="skills-tree">
-              <div class="skills-tree__list">
-                <div class="skills-tree__item">Software Engineering</div>
-                <div class="skills-tree__item">Network Engineering</div>
-                <div class="skills-tree__item">Cybersecurity Analysis</div>
-                <div class="skills-tree__item">Penetration Testing</div>
+          <aside class="now-card reveal" aria-label="Current status">
+            <div class="now-head">
+              <span class="live-dot" aria-hidden="true"></span>
+              <span>Live from GitHub</span>
+              <span class="now-handle">@Jacked-cpu</span>
+            </div>
+            <dl class="now-list">
+              <div><dt>Latest repository</dt><dd data-live="latestRepo">samba</dd></div>
+              <div><dt>Last push</dt><dd data-live="lastPush">recently</dd></div>
+              <div><dt>Primary language</dt><dd data-live="language">Python</dd></div>
+              <div><dt>Research focus</dt><dd>SMB · Windows · Linux</dd></div>
+            </dl>
+            <a href="https://github.com/Jacked-cpu" class="text-link" target="_blank" rel="noopener">Open GitHub profile <span aria-hidden="true">↗</span></a>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="section expertise" id="expertise">
+      <div class="container">
+        <div class="section-head reveal">
+          <h2>What I do</h2>
+          <p>Four disciplines, one goal: systems that survive contact with an attacker.</p>
+        </div>
+
+        <ol class="expertise-list">
+          <li class="expertise-item reveal">
+            <span class="exp-num">01</span>
+            <div class="exp-main">
+              <h3>Offensive security</h3>
+              <p>Penetration tests, exploit proof-of-concepts and privilege escalation across SMB, Windows and Linux targets. Findings arrive with reproduction steps, not just a score.</p>
+            </div>
+            <div class="exp-tags">
+              <span>Nmap</span><span>Burp Suite</span><span>Metasploit</span><span>PoC development</span>
+            </div>
+          </li>
+          <li class="expertise-item reveal">
+            <span class="exp-num">02</span>
+            <div class="exp-main">
+              <h3>Network engineering</h3>
+              <p>Segmented architectures, firewall policy and traffic analysis. I design networks that are observable by default and painful to move through laterally.</p>
+            </div>
+            <div class="exp-tags">
+              <span>TCP/IP</span><span>Routing</span><span>Firewalls</span><span>Wireshark</span>
+            </div>
+          </li>
+          <li class="expertise-item reveal">
+            <span class="exp-num">03</span>
+            <div class="exp-main">
+              <h3>Secure software</h3>
+              <p>Web applications and APIs built against the OWASP Top 10, with auth, input handling and logging treated as product features rather than a final audit.</p>
+            </div>
+            <div class="exp-tags">
+              <span>Python</span><span>Django</span><span>Node.js</span><span>API security</span>
+            </div>
+          </li>
+          <li class="expertise-item reveal">
+            <span class="exp-num">04</span>
+            <div class="exp-main">
+              <h3>AI &amp; automation</h3>
+              <p>LLM agents, tool use and secure automation. Certified across Claude, Google Vertex AI and Amazon Bedrock, applied to security workflows and product delivery.</p>
+            </div>
+            <div class="exp-tags">
+              <span>Claude</span><span>Vertex AI</span><span>Amazon Bedrock</span><span>Agents</span>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="section projects" id="projects">
+      <div class="container">
+        <div class="section-head reveal">
+          <h2>Selected projects</h2>
+          <p>Public research and hands-on builds from my <a href="https://github.com/Jacked-cpu" target="_blank" rel="noopener">security GitHub</a>.</p>
+        </div>
+
+        <div class="project-grid">
+          <article class="project project-featured reveal">
+            <div class="project-head">
+              <span class="project-kicker">Research · Featured</span>
+              <a href="https://github.com/Jacked-cpu/samba" class="project-arrow" target="_blank" rel="noopener" aria-label="View SMB Exploit Lab on GitHub">↗</a>
+            </div>
+            <h3>SMB Exploit Lab</h3>
+            <p class="project-lead">A working collection of SMB and local privilege escalation proof-of-concepts, verified against Metasploitable 2 and 3. Standard library Python, clear scope, reproducible labs.</p>
+            <ul class="cve-list">
+              <li><span>CVE-2007-2447</span> Samba pre-auth RCE</li>
+              <li><span>CVE-2009-3103</span> Windows SMBv2 client crash</li>
+              <li><span>CVE-2010-2075</span> UnrealIRCd backdoor</li>
+              <li><span>CVE-2017-0143</span> EternalBlue / MS17-010</li>
+              <li><span>CVE-2020-0796</span> SMBGhost RCE</li>
+              <li><span>CVE-2021-4034</span> PwnKit local root</li>
+            </ul>
+            <div class="project-foot">
+              <div class="project-tags">
+                <span>Python</span><span>SMB</span><span>Exploit dev</span><span>Linux</span>
+              </div>
+              <div class="repo-stats" data-repo="Jacked-cpu/samba">
+                <span data-repo-stars>GitHub</span>
+                <span data-repo-updated>Public</span>
               </div>
             </div>
+          </article>
+
+          <article class="project reveal">
+            <div class="project-head">
+              <span class="project-kicker">Windows · PoC</span>
+              <a href="https://github.com/Jacked-cpu/CVE-2020-0796-RCE-POC" class="project-arrow" target="_blank" rel="noopener" aria-label="View SMBGhost PoC on GitHub">↗</a>
+            </div>
+            <h3>SMBGhost RCE</h3>
+            <p>CVE-2020-0796 proof-of-concept for Windows 10 1903 and 1909. Kernel offset collection, SMBv3 compression and a SYSTEM shell chain.</p>
+            <div class="project-foot">
+              <div class="project-tags"><span>Windows</span><span>Kernel</span><span>Python</span></div>
+              <div class="repo-stats" data-repo="Jacked-cpu/CVE-2020-0796-RCE-POC">
+                <span data-repo-stars>GitHub</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="project reveal">
+            <div class="project-head">
+              <span class="project-kicker">Web security · Lab</span>
+              <a href="https://github.com/Jacked-cpu/vulnmart" class="project-arrow" target="_blank" rel="noopener" aria-label="View VulnMart on GitHub">↗</a>
+            </div>
+            <h3>VulnMart</h3>
+            <p>A deliberately vulnerable PHP storefront used to practise web exploitation end to end: auth bypass, injection, broken access control and reporting.</p>
+            <div class="project-foot">
+              <div class="project-tags"><span>PHP</span><span>Web security</span><span>OWASP</span></div>
+              <div class="repo-stats" data-repo="Jacked-cpu/vulnmart">
+                <span data-repo-stars>Fork</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section certs" id="certifications">
+      <div class="container">
+        <div class="section-head reveal">
+          <h2>Certified across the AI stack.</h2>
+          <p>Eleven completed Anthropic Academy programs covering Claude, agents, cloud deployment and AI fluency. Every certificate is verifiable and linked.</p>
+        </div>
+
+        <div class="cert-grid">
+          <a class="cert-card reveal" href="assets/certificates/claude-101.pdf" target="_blank" rel="noopener">
+            <span class="cert-thumb"><img src="assets/certificates/previews/claude-101.webp" alt="Claude 101 certificate" loading="lazy" width="640" height="495"></span>
+            <span class="cert-body">
+              <span class="cert-issuer">Anthropic Academy</span>
+              <h3>Claude 101</h3>
+              <span class="cert-link">View certificate <span aria-hidden="true">↗</span></span>
+            </span>
+          </a>
+          <a class="cert-card reveal" href="assets/certificates/claude-code-in-action.pdf" target="_blank" rel="noopener">
+            <span class="cert-thumb"><img src="assets/certificates/previews/claude-code-in-action.webp" alt="Claude Code in Action certificate" loading="lazy" width="640" height="495"></span>
+            <span class="cert-body">
+              <span class="cert-issuer">Anthropic Academy</span>
+              <h3>Claude Code in Action</h3>
+              <span class="cert-link">View certificate <span aria-hidden="true">↗</span></span>
+            </span>
+          </a>
+          <a class="cert-card reveal" href="assets/certificates/introduction-to-claude-cowork.pdf" target="_blank" rel="noopener">
+            <span class="cert-thumb"><img src="assets/certificates/previews/introduction-to-claude-cowork.webp" alt="Introduction to Claude Cowork certificate" loading="lazy" width="640" height="495"></span>
+            <span class="cert-body">
+              <span class="cert-issuer">Anthropic Academy</span>
+              <h3>Introduction to Claude Cowork</h3>
+              <span class="cert-link">View certificate <span aria-hidden="true">↗</span></span>
+            </span>
+          </a>
+          <a class="cert-card reveal" href="assets/certificates/introduction-to-subagents.pdf" target="_blank" rel="noopener">
+            <span class="cert-thumb"><img src="assets/certificates/previews/introduction-to-subagents.webp" alt="Introduction to subagents certificate" loading="lazy" width="640" height="495"></span>
+            <span class="cert-body">
+              <span class="cert-issuer">Anthropic Academy</span>
+              <h3>Introduction to subagents</h3>
+              <span class="cert-link">View certificate <span aria-hidden="true">↗</span></span>
+            </span>
+          </a>
+          <a class="cert-card reveal" href="assets/certificates/introduction-to-agent-skills.pdf" target="_blank" rel="noopener">
+            <span class="cert-thumb"><img src="assets/certificates/previews/introduction-to-agent-skills.webp" alt="Introduction to agent skills certificate" loading="lazy" width="640" height="495"></span>
+            <span class="cert-body">
+              <span class="cert-issuer">Anthropic Academy</span>
+              <h3>Introduction to agent skills</h3>
+              <span class="cert-link">View certificate <span aria-hidden="true">↗</span></span>
+            </span>
+          </a>
+          <a class="cert-card reveal" href="assets/certificates/claude-google-vertex-ai.pdf" target="_blank" rel="noopener">
+            <span class="cert-thumb"><img src="assets/certificates/previews/claude-google-vertex-ai.webp" alt="Claude with Google Vertex AI certificate" loading="lazy" width="640" height="495"></span>
+            <span class="cert-body">
+              <span class="cert-issuer">Anthropic Academy</span>
+              <h3>Claude with Google Vertex AI</h3>
+              <span class="cert-link">View certificate <span aria-hidden="true">↗</span></span>
+            </span>
+          </a>
+          <a class="cert-card reveal" href="assets/certificates/claude-amazon-bedrock.pdf" target="_blank" rel="noopener">
+            <span class="cert-thumb"><img src="assets/certificates/previews/claude-amazon-bedrock.webp" alt="Claude with Amazon Bedrock certificate" loading="lazy" width="640" height="495"></span>
+            <span class="cert-body">
+              <span class="cert-issuer">Anthropic Academy</span>
+              <h3>Claude with Amazon Bedrock</h3>
+              <span class="cert-link">View certificate <span aria-hidden="true">↗</span></span>
+            </span>
+          </a>
+          <a class="cert-card reveal" href="assets/certificates/ai-fluency-framework-foundations.pdf" target="_blank" rel="noopener">
+            <span class="cert-thumb"><img src="assets/certificates/previews/ai-fluency-framework-foundations.webp" alt="AI Fluency: Framework and Foundations certificate" loading="lazy" width="640" height="495"></span>
+            <span class="cert-body">
+              <span class="cert-issuer">Anthropic Academy</span>
+              <h3>AI Fluency: Framework &amp; Foundations</h3>
+              <span class="cert-link">View certificate <span aria-hidden="true">↗</span></span>
+            </span>
+          </a>
+          <a class="cert-card reveal" href="assets/certificates/ai-fluency-capabilities-limitations.pdf" target="_blank" rel="noopener">
+            <span class="cert-thumb"><img src="assets/certificates/previews/ai-fluency-capabilities-limitations.webp" alt="AI Fluency: AI Capabilities and Limitations certificate" loading="lazy" width="640" height="495"></span>
+            <span class="cert-body">
+              <span class="cert-issuer">Anthropic Academy</span>
+              <h3>AI Capabilities &amp; Limitations</h3>
+              <span class="cert-link">View certificate <span aria-hidden="true">↗</span></span>
+            </span>
+          </a>
+          <a class="cert-card reveal" href="assets/certificates/ai-fluency-students.pdf" target="_blank" rel="noopener">
+            <span class="cert-thumb"><img src="assets/certificates/previews/ai-fluency-students.webp" alt="AI Fluency for students certificate" loading="lazy" width="640" height="495"></span>
+            <span class="cert-body">
+              <span class="cert-issuer">Anthropic Academy</span>
+              <h3>AI Fluency for students</h3>
+              <span class="cert-link">View certificate <span aria-hidden="true">↗</span></span>
+            </span>
+          </a>
+          <a class="cert-card reveal" href="assets/certificates/ai-fluency-small-businesses.pdf" target="_blank" rel="noopener">
+            <span class="cert-thumb"><img src="assets/certificates/previews/ai-fluency-small-businesses.webp" alt="AI Fluency for Small Businesses certificate" loading="lazy" width="640" height="495"></span>
+            <span class="cert-body">
+              <span class="cert-issuer">PayPal × Anthropic</span>
+              <h3>AI Fluency for Small Businesses</h3>
+              <span class="cert-link">View certificate <span aria-hidden="true">↗</span></span>
+            </span>
+          </a>
+          <div class="cert-card cert-card-text reveal">
+            <span class="cert-mark" aria-hidden="true">N+</span>
+            <span class="cert-body">
+              <span class="cert-issuer">CompTIA</span>
+              <h3>Network+ (N10-008)</h3>
+              <span class="cert-link cert-link-static">Certified</span>
+            </span>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="about" class="section about">
+    <section class="section experience" id="experience">
       <div class="container">
-        <h2 class="section-title">/about</h2>
-        <div class="about">
-          <p>Software Engineer, Network Engineer, Cybersecurity Analyst, and Penetration Tester based in Kampala, Uganda. I develop secure applications, design robust networks, conduct vulnerability assessments, and perform ethical hacking to strengthen digital infrastructure.</p>
-          <p>Proficient in Python, JavaScript, network protocols, security tools (Nmap, Wireshark, Metasploit), Linux administration, and cloud security fundamentals.</p>
+        <div class="section-head reveal">
+          <h2>Where I've worked</h2>
+          <p>Engineering with security in the requirements, not bolted on after launch.</p>
         </div>
-      </div>
-    </section>
 
-    <section id="experience" class="section">
-      <div class="container">
-        <h2 class="section-title">/experience</h2>
-        <div class="cv-grid">
-          <div class="cv-column">
-            <h3 class="cv-h3">Professional Experience</h3>
-            <div class="cv-entry">
-              <h4>Software Engineering Intern</h4>
-              <p>Tech Company, Kampala | June 2023 – Present</p>
-              <ul>
-                <li>Developed secure web applications using Python/Django with focus on OWASP Top 10 compliance</li>
-                <li>Implemented real-time network monitoring dashboard with anomaly detection</li>
-                <li>Conducted comprehensive vulnerability assessments using Nessus and Burp Suite</li>
-                <li>Automated penetration testing workflows with custom Python scripts</li>
+        <div class="experience-grid">
+          <div class="timeline">
+            <article class="tl-item reveal">
+              <span class="tl-date">2026 — Present</span>
+              <div class="tl-body">
+                <h3>AI Engineering Intern</h3>
+                <p class="org">Deep Shift AI · Kampala</p>
+                <ul>
+                  <li>Train and evaluate AI models across the full pipeline: data curation, prompt design, evaluation and deployment.</li>
+                  <li>Ground model behaviour in Ugandan context, language and local use cases.</li>
+                </ul>
+              </div>
+            </article>
+            <article class="tl-item reveal">
+              <span class="tl-date">Current</span>
+              <div class="tl-body">
+                <h3>Team Lead · Cybersecurity Division</h3>
+                <p class="org">MUCOSA · Mbarara University of Science and Technology</p>
+                <ul>
+                  <li>Lead the student cybersecurity division: hands-on labs, CTFs and security awareness.</li>
+                  <li>Coordinate division research, tooling and the training calendar.</li>
+                </ul>
+              </div>
+            </article>
+            <article class="tl-item reveal">
+              <span class="tl-date">2025</span>
+              <div class="tl-body">
+                <h3>Network Engineering Intern</h3>
+                <p class="org">ICT Labs · Ntinda</p>
+                <ul>
+                  <li>Built practical routing, switching, device configuration and troubleshooting skills from beginner to intermediate level.</li>
+                </ul>
+              </div>
+            </article>
+          </div>
+
+          <aside class="edu-card reveal">
+            <div class="edu-block">
+              <span class="edu-kicker">Education</span>
+              <h3>BSc Software Engineering</h3>
+              <p>Mbarara University of Science and Technology</p>
+              <p class="edu-meta">In progress · Cybersecurity &amp; networks</p>
+            </div>
+            <div class="edu-block">
+              <span class="edu-kicker">Earlier education</span>
+              <ul class="edu-list">
+                <li>Uganda Martyrs SS Namugongo <span>UCE / UACE</span></li>
+                <li>Shilo Nile Star Primary School <span>Primary</span></li>
+                <li>Green Bridge Academy <span>Graphics</span></li>
               </ul>
             </div>
-            <div class="cv-entry">
-              <h4>Freelance Network Security Consultant</h4>
-              <p>Remote | Jan 2023 – May 2023</p>
-              <ul>
-                <li>Performed external/internal penetration tests for small businesses</li>
-                <li>Designed and implemented secure network architectures</li>
-                <li>Developed security awareness training materials</li>
+            <div class="edu-block">
+              <span class="edu-kicker">Industry certifications</span>
+              <ul class="edu-list">
+                <li>CompTIA Network+ (N10-008) <span>Certified</span></li>
+                <li>eJPT — eLearnSecurity Junior Penetration Tester <span>Preparing</span></li>
+                <li>Linux Essentials <span>In progress</span></li>
               </ul>
             </div>
-          </div>
-
-          <div class="cv-column">
-            <h3 class="cv-h3">Education & Certifications</h3>
-            <div class="cv-entry">
-              <h4>BSc Computer Science (Expected 2025)</h4>
-              <p>King Ceasor University of Science and Technology, Kampala</p>
-              <p>GPA: 4.2/5.0 | Focus: Cybersecurity & Network Engineering</p>
-            </div>
-            <div class="cv-entry">
-              <h3 class="cv-h3-small">Certifications</h3>
-              <ul>
-                <li>CompTIA Network+ (N10-008) - Certified</li>
-                <li>eJPT (eLearnSecurity Junior Penetration Tester) - Preparing</li>
-                <li>Linux Essentials - In Progress</li>
-              </ul>
-            </div>
-          </div>
+          </aside>
         </div>
       </div>
     </section>
 
-    <section id="projects" class="section">
+    <section class="section contact" id="contact">
       <div class="container">
-        <h2 class="section-title">/projects</h2>
-        <div class="projects-grid">
-          <div class="project-card">
-            <h3>Network Vulnerability Scanner</h3>
-            <p>Python/Nmap integration with reporting dashboard for enterprise vulnerability management. Features asset discovery, risk scoring, and executive summaries.</p>
-            <div class="project-tags">
-              <span class="tag">Python</span>
-              <span class="tag">Nmap</span>
-              <span class="tag">Cybersecurity</span>
-            </div>
-          </div>
-
-          <div class="project-card">
-            <h3>Cyber Range Platform</h3>
-            <p>Dockerized training environment with vulnerable services, Active Directory simulation, and automated assessment. Used for team pentesting practice.</p>
-            <div class="project-tags">
-              <span class="tag">Docker</span>
-              <span class="tag">Pentesting</span>
-              <span class="tag">Infrastructure</span>
-            </div>
-          </div>
-
-          <div class="project-card">
-            <h3>Secure Web Monitor</h3>
-            <p>Real-time WAF with ML anomaly detection. Monitors login attempts, SQLi/XSS detection, and automated IP blocking.</p>
-            <div class="project-tags">
-              <span class="tag">Node.js</span>
-              <span class="tag">Machine Learning</span>
-              <span class="tag">WebSec</span>
-            </div>
-          </div>
-
-          <div class="project-card">
-            <h3>Traffic Analysis Suite</h3>
-            <p>Custom Wireshark dissectors for encrypted protocol analysis and threat hunting in enterprise traffic.</p>
-            <div class="project-tags">
-              <span class="tag">Wireshark</span>
-              <span class="tag">C</span>
-              <span class="tag">Network Analysis</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="contact" class="section">
-      <div class="container">
-        <h2 class="section-title">/contact</h2>
         <div class="contact-grid">
-          <div class="contact-info">
-            <h3>Let's connect</h3>
-            <p>atgodoch@gmail.com</p>
-            <p>+256 774 778164</p>
-            <p>Kampala, Uganda</p>
+          <div class="contact-copy reveal">
+            <h2>Let's secure your next system.</h2>
+            <p>Available for penetration tests, security reviews, network design, secure web builds and general software design. Based in Kampala, working remotely.</p>
+            <ul class="contact-list">
+              <li><span>Email</span><a href="mailto:atgodoch@gmail.com">atgodoch@gmail.com</a></li>
+              <li><span>Call</span><a href="tel:+256774778164">+256 774 778164</a></li>
+              <li><span>WhatsApp</span><a href="https://wa.me/256774778164" target="_blank" rel="noopener">Message +256 774 778164</a></li>
+              <li><span>Location</span><span>Kampala, Uganda</span></li>
+            </ul>
             <div class="social-links">
-              <a href="mailto:atgodoch@gmail.com" class="social-link" aria-label="Email">
-                <i class="fas fa-envelope"></i>
-              </a>
-              <a href="https://linkedin.com/in/atigopaul" class="social-link" aria-label="LinkedIn" target="_blank">
-                <i class="fab fa-linkedin"></i>
-              </a>
+              <a href="https://github.com/Jacked-cpu" target="_blank" rel="noopener">GitHub <span aria-hidden="true">↗</span></a>
+              <a href="https://github.com/GrooveStreet-Software" target="_blank" rel="noopener">GrooveStreet <span aria-hidden="true">↗</span></a>
             </div>
           </div>
 
-          <form class="contact-form" novalidate>
-            <input type="text" placeholder="Your name" required>
-            <input type="email" placeholder="Your email" required>
-            <textarea placeholder="Your message" rows="6" required></textarea>
-            <button type="submit">Send message</button>
+          <form class="contact-form reveal" id="contactForm">
+            <div class="field">
+              <label for="name">Name</label>
+              <input type="text" id="name" name="name" autocomplete="name" required>
+            </div>
+            <div class="field">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" autocomplete="email" required>
+            </div>
+            <div class="field">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" rows="5" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Send message</button>
+            <p class="form-note" id="formNote" aria-live="polite">Opens your email app with the message ready to send.</p>
           </form>
         </div>
       </div>
@@ -208,11 +477,14 @@ if ('loading' in HTMLLinkElement.prototype) {
   </main>
 
   <footer class="footer">
-    <div class="container">
-      <p>&copy; 2024 ATIGO PAUL ODOCH. All rights reserved. | <a href="cv.html">View CV</a></p>
+    <div class="container footer-inner">
+      <span class="footer-mark">atg</span>
+      <p>&copy; <span id="year">2026</span> Atigo Paul Odoch. Built in Kampala.</p>
+      <div class="footer-meta">
+        <span class="visitor-count"><span class="live-dot" aria-hidden="true"></span>Visitors <b data-visitor-count>------</b></span>
+        <a href="cv.html">Check my CV <span aria-hidden="true">↗</span></a>
+      </div>
     </div>
   </footer>
-
-  <script src="assets/js/main.js"></script>
 </body>
 </html>

@@ -3,117 +3,203 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ATIGO PAUL ODOCH - CV | Software Engineer & Cybersecurity</title>
-  <link rel="stylesheet" href="assets/css/style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Fira+Code:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" media="print" onload="this.media='all'">
-<script>
-if ('loading' in HTMLLinkElement.prototype) {
-  document.querySelectorAll('link[rel=stylesheet][media=print]').forEach( link => {
-    link.media = 'all';
-  });
-} else {
-  document.querySelectorAll('link[rel=stylesheet][media=print]').forEach( link => {
-    link.onload = () => {
-      link.media = 'all';
-    };
-  });
-}
-</script>
+  <title>atg | CV</title>
+  <meta name="description" content="Curriculum vitae for Atigo Paul Odoch, cybersecurity expert, penetration tester and software engineering student at Mbarara University of Science and Technology.">
+  <meta name="theme-color" content="#f4efe6">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/cv.css">
+  <script src="assets/js/cv.js" defer></script>
 </head>
 <body>
-  <nav class="nav">
-    <div class="nav-content">
-      <a href="index.html" class="logo nav-link">Portfolio</a>
-      <button class="hamburger" aria-label="Toggle menu">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-      <ul class="nav-menu">
-        <a href="index.html" class="nav-link"><i class="fas fa-home"></i> Home</a>
-        <a href="ATIGOCV.pdf" download class="nav-link download-btn">Download CV</a>
+  <div class="cv-bar">
+    <a href="index.html" class="cv-back">← Portfolio</a>
+    <span class="cv-bar-title">Curriculum vitae</span>
+    <a href="ATIGOCV.pdf" class="cv-download" download>Download PDF</a>
+  </div>
+
+  <main class="cv">
+    <header class="cv-head">
+      <div>
+        <p class="cv-kicker">Kampala, Uganda · Open to work</p>
+        <h1>Atigo Paul<br>Odoch</h1>
+        <p class="cv-role">Cybersecurity Expert · Penetration Tester · Software Engineer</p>
+      </div>
+      <ul class="cv-contact">
+        <li><a href="mailto:atgodoch@gmail.com">atgodoch@gmail.com</a></li>
+        <li><a href="tel:+256774778164">+256 774 778164</a></li>
+        <li><a href="https://wa.me/256774778164" target="_blank" rel="noopener">wa.me/256774778164</a></li>
+        <li><a href="https://github.com/Jacked-cpu" target="_blank" rel="noopener">github.com/Jacked-cpu</a></li>
+        <li><a href="https://github.com/GrooveStreet-Software" target="_blank" rel="noopener">GrooveStreet Software</a></li>
       </ul>
+    </header>
+
+    <section class="cv-section">
+      <h2>Profile</h2>
+      <p class="cv-lead">Cybersecurity analyst, network engineer and software engineering student at Mbarara University of Science and Technology. I run penetration tests, publish reproducible exploit research for SMB and Windows attack paths, and build secure applications end to end. Currently an AI engineering intern at Deep Shift AI and team lead of the MUCOSA Cybersecurity Division.</p>
+    </section>
+
+    <section class="cv-section">
+      <h2>Experience</h2>
+      <article class="cv-entry">
+        <div class="cv-entry-head">
+          <h3>AI Engineering Intern</h3>
+          <span>2026 — Present</span>
+        </div>
+        <p class="cv-org">Deep Shift AI · Kampala, Uganda</p>
+        <ul>
+          <li>Train and evaluate AI models across the full pipeline: data curation, prompt design, evaluation and deployment.</li>
+          <li>Ground model behaviour in Ugandan context, language and local use cases.</li>
+        </ul>
+      </article>
+      <article class="cv-entry">
+        <div class="cv-entry-head">
+          <h3>Team Lead · Cybersecurity Division</h3>
+          <span>Current</span>
+        </div>
+        <p class="cv-org">MUCOSA · Mbarara University of Science and Technology</p>
+        <ul>
+          <li>Lead the student cybersecurity division: hands-on labs, CTFs and security awareness.</li>
+          <li>Coordinate division research, tooling and the training calendar.</li>
+        </ul>
+      </article>
+      <article class="cv-entry">
+        <div class="cv-entry-head">
+          <h3>Network Engineering Intern</h3>
+          <span>2025</span>
+        </div>
+        <p class="cv-org">ICT Labs · Ntinda, Kampala</p>
+        <ul>
+          <li>Built practical routing, switching, device configuration and troubleshooting skills from beginner to intermediate level.</li>
+        </ul>
+      </article>
+    </section>
+
+    <section class="cv-section">
+      <h2>Security research</h2>
+      <article class="cv-entry">
+        <div class="cv-entry-head">
+          <h3>SMB Exploit Lab</h3>
+          <span>Public · Python</span>
+        </div>
+        <p class="cv-org">github.com/Jacked-cpu/samba</p>
+        <p>Working proof-of-concepts for six CVEs, verified in Metasploitable 2 and 3 labs: CVE-2007-2447, CVE-2009-3103, CVE-2010-2075, CVE-2017-0143 (EternalBlue), CVE-2020-0796 (SMBGhost) and CVE-2021-4034 (PwnKit). Includes reverse-shell tooling and clear scope documentation.</p>
+      </article>
+      <article class="cv-entry">
+        <div class="cv-entry-head">
+          <h3>SMBGhost RCE PoC</h3>
+          <span>Windows · Python</span>
+        </div>
+        <p class="cv-org">CVE-2020-0796 · Windows 10 1903 / 1909</p>
+        <p>Kernel offset collection, SMBv3 compression and a SYSTEM shell chain for authorised lab testing.</p>
+      </article>
+    </section>
+
+    <section class="cv-section">
+      <h2>Technical skills</h2>
+      <dl class="cv-skills">
+        <div><dt>Offensive</dt><dd>Nmap, Burp Suite, Metasploit, Wireshark, exploit development, privilege escalation</dd></div>
+        <div><dt>Networking</dt><dd>TCP/IP, routing, switching, firewalls, segmentation, traffic analysis</dd></div>
+        <div><dt>Engineering</dt><dd>Python, Django, JavaScript, Node.js, PHP, C, Bash, Git, secure API design</dd></div>
+        <div><dt>Systems</dt><dd>Linux administration, Docker, AWS, Azure, network monitoring</dd></div>
+        <div><dt>AI</dt><dd>Model training and evaluation, Claude, Google Vertex AI, Amazon Bedrock, agents, tool use</dd></div>
+        <div><dt>Design</dt><dd>General software design, UI implementation, computer graphics</dd></div>
+      </dl>
+    </section>
+
+    <section class="cv-section">
+      <h2>Education</h2>
+      <article class="cv-entry">
+        <div class="cv-entry-head">
+          <h3>BSc Software Engineering</h3>
+          <span>In progress</span>
+        </div>
+        <p class="cv-org">Mbarara University of Science and Technology</p>
+        <p>Focus: software engineering, cybersecurity and network systems.</p>
+      </article>
+      <article class="cv-entry">
+        <div class="cv-entry-head">
+          <h3>UACE &amp; UCE</h3>
+          <span>Advanced · Ordinary</span>
+        </div>
+        <p class="cv-org">Uganda Martyrs SS Namugongo</p>
+      </article>
+      <article class="cv-entry">
+        <div class="cv-entry-head">
+          <h3>Primary Leaving Examination (PLE)</h3>
+          <span>Primary</span>
+        </div>
+        <p class="cv-org">Shilo Nile Star Primary School</p>
+      </article>
+      <article class="cv-entry">
+        <div class="cv-entry-head">
+          <h3>Certificate in Computer Graphics Design</h3>
+          <span>Certificate</span>
+        </div>
+        <p class="cv-org">Green Bridge Academy</p>
+      </article>
+    </section>
+
+    <section class="cv-section">
+      <h2>Certifications</h2>
+      <ul class="cv-certs">
+        <li><span>CompTIA</span>Network+ (N10-008) — Certified</li>
+        <li><span>Anthropic</span>Claude 101</li>
+        <li><span>Anthropic</span>Claude Code in Action</li>
+        <li><span>Anthropic</span>Introduction to Claude Cowork</li>
+        <li><span>Anthropic</span>Introduction to subagents</li>
+        <li><span>Anthropic</span>Introduction to agent skills</li>
+        <li><span>Anthropic</span>Claude with Google Vertex AI</li>
+        <li><span>Anthropic</span>Claude with Amazon Bedrock</li>
+        <li><span>Anthropic</span>AI Fluency: Framework &amp; Foundations</li>
+        <li><span>Anthropic</span>AI Fluency: AI Capabilities &amp; Limitations</li>
+        <li><span>Anthropic</span>AI Fluency for students</li>
+        <li><span>PayPal × Anthropic</span>AI Fluency for Small Businesses</li>
+        <li><span>In progress</span>eJPT — eLearnSecurity Junior Penetration Tester</li>
+        <li><span>In progress</span>Linux Essentials</li>
+      </ul>
+    </section>
+
+    <section class="cv-section">
+      <h2>Personal</h2>
+      <dl class="cv-details">
+        <div><dt>Date of birth</dt><dd>13 September 2001</dd></div>
+        <div><dt>Languages</dt><dd>English, Langi, Luganda, Lusoga, Kiswahili, Runyankore</dd></div>
+        <div><dt>Interests</dt><dd>Music, art, video games, workouts, rugby, vibe coding</dd></div>
+      </dl>
+    </section>
+
+    <footer class="cv-foot">
+      <p>References available on request.</p>
+      <p>Portfolio: <a href="index.html">atg | cybersecurity expert</a></p>
+    </footer>
+  </main>
+
+  <dialog class="cv-modal" id="cvModal" aria-labelledby="cvModalTitle">
+    <form method="dialog" class="cv-modal-top">
+      <span class="cv-modal-kicker">Seen enough?</span>
+      <button class="cv-modal-close" aria-label="Close dialog">×</button>
+    </form>
+    <h2 id="cvModalTitle">Let's work together.</h2>
+    <p>I'm available for security work, AI engineering and software design. Reach me directly and I'll reply quickly.</p>
+    <div class="cv-modal-actions">
+      <a href="tel:+256774778164" class="cv-action cv-action-dark">
+        <span>Call</span>
+        <b>+256 774 778164</b>
+      </a>
+      <a href="https://wa.me/256774778164?text=Hi%20Atigo%2C%20I%20saw%20your%20CV%20and%20would%20like%20to%20talk." class="cv-action cv-action-accent" target="_blank" rel="noopener">
+        <span>WhatsApp</span>
+        <b>Send a message</b>
+      </a>
+      <a href="mailto:atgodoch@gmail.com?subject=Let%27s%20work%20together" class="cv-action">
+        <span>Email</span>
+        <b>atgodoch@gmail.com</b>
+      </a>
     </div>
-  </nav>
-
-  <section class="section cv-section">
-    <div class="container">
-      <header class="cv-header">
-        <h1>ATIGO PAUL ODOCH</h1>
-        <h2>Software Engineer | Network Engineer | Cybersecurity Analyst | Penetration Tester</h2>
-        <div class="cv-contact">
-          <span>atgodoch@gmail.com</span> | 
-          <span>+256 774 778164</span> | 
-          <span>Kampala, Uganda</span> | 
-          <span><a href="https://linkedin.com/in/atigopaul">LinkedIn</a></span>
-        </div>
-      </header>
-
-      <div class="cv-grid">
-        <div class="cv-column">
-          <h3 class="cv-h3">Professional Summary</h3>
-          <p>Software Engineer with expertise in cybersecurity, network engineering, and penetration testing. Experienced in developing secure applications, designing scalable networks, conducting vulnerability assessments, and performing ethical hacking engagements. Committed to building resilient digital infrastructure.</p>
-
-          <h3 class="cv-h3">Technical Skills</h3>
-          <ul class="cv-skills">
-            <li>Programming: Python, JavaScript, C++, Bash</li>
-            <li>Networking: TCP/IP, Routing, Firewalls, SDN</li>
-            <li>Cybersecurity: Nmap, Wireshark, Metasploit, Burp Suite</li>
-            <li>Systems: Linux Administration, Docker, AWS/Azure</li>
-            <li>Development: Web Security, API Security, Secure Coding</li>
-          </ul>
-
-          <h3 class="cv-h3">Education</h3>
-          <div class="cv-entry">
-            <h4>BSc Computer Science (Expected 2025)</h4>
-            <p>King Ceasor University, Kampala</p>
-            <p>Focus: Cybersecurity & Network Engineering</p>
-          </div>
-        </div>
-
-        <div class="cv-column">
-          <h3 class="cv-h3">Professional Experience</h3>
-          <div class="cv-entry">
-            <h4>Software Engineering Intern</h4>
-            <p>Tech Company, Kampala | 2023 - Present</p>
-            <ul>
-              <li>Developed secure web applications using Python/Django</li>
-              <li>Implemented network monitoring and security alerting systems</li>
-              <li>Conducted vulnerability assessments and penetration tests</li>
-            </ul>
-          </div>
-
-          <h3 class="cv-h3">Key Projects</h3>
-          <div class="cv-entry">
-            <h4>Automated Vulnerability Scanner</h4>
-            <p>Python/Nmap integration with reporting dashboard for enterprise networks</p>
-          </div>
-          <div class="cv-entry">
-            <h4>Cyber Range Training Platform</h4>
-            <p>Docker-based pentesting lab with AD simulation and assessment tools</p>
-          </div>
-          <div class="cv-entry">
-            <h4>Network Traffic Analyzer</h4>
-            <p>Wireshark plugin suite for protocol analysis and threat detection</p>
-          </div>
-
-          <h3 class="cv-h3">Certifications</h3>
-          <ul>
-            <li>CompTIA Network+ (Completed)</li>
-            <li>eJPT (eLearnSecurity) - Preparing</li>
-            <li>Linux Essentials (In Progress)</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="cv-footer">
-        <a href="ATIGOCV.pdf" download class="download-btn">Download CV</a>
-        <p>References available upon request</p>
-      </div>
-    </div>
-  </section>
-
-  <script src="assets/js/main.js"></script>
+    <form method="dialog">
+      <button class="cv-modal-dismiss">Keep reading</button>
+    </form>
+  </dialog>
 </body>
 </html>

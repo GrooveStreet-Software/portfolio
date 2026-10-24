@@ -1,192 +1,256 @@
-// Professional Portfolio JavaScript - B&W Theme
 document.addEventListener('DOMContentLoaded', () => {
-  // Typing effect
-  const dynamicSpan = document.querySelector('.typewriter__dynamic');
-  if (dynamicSpan) {
-    const phrases = [
-      'Software Engineer.',
-      'Network Engineer.',
-      'CyberSecurity Analyst.',
-      'PenTester.'
-    ];
-    let phraseIndex = 0;
-    let charIndex = 0;
-    let isDeleting = false;
-    
-    function typeWriter() {
-      const currentPhrase = phrases[phraseIndex];
-      
-      if (!isDeleting && charIndex <= currentPhrase.length) {
-        dynamicSpan.textContent = currentPhrase.slice(0, charIndex);
-        charIndex++;
-        setTimeout(typeWriter, 100);
-      } else if (isDeleting && charIndex > 0) {
-        dynamicSpan.textContent = currentPhrase.slice(0, charIndex - 1);
-        charIndex--;
-        setTimeout(typeWriter, 50);
-      } else {
-        isDeleting = !isDeleting;
-        if (!isDeleting) {
-          phraseIndex = (phraseIndex + 1) % phrases.length;
-          setTimeout(typeWriter, 1500);
-        } else {
-          setTimeout(typeWriter, 50);
-        }
-      }
-    }
-    typeWriter();
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  const year = document.getElementById('year');
+  if (year) year.textContent = new Date().getFullYear();
+
+  const toggle = document.getElementById('menuToggle');
+  const menu = document.getElementById('navMenu');
+
+  function setMenu(open) {
+    if (!toggle || !menu) return;
+    toggle.setAttribute('aria-expanded', String(open));
+    toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+    menu.classList.toggle('is-open', open);
+    document.body.classList.toggle('menu-open', open);
   }
 
-  // Hamburger menu - Updated selectors
-  const hamburger = document.querySelector('.hamburger');
-  const navMenu = document.querySelector('.nav-menu');
-  
-  if (hamburger && navMenu) {
-    hamburger.addEventListener('click', (e) => {
-      e.stopPropagation();
-      hamburger.classList.toggle('active');
-      navMenu.classList.toggle('active');
+  if (toggle && menu) {
+    toggle.addEventListener('click', () => {
+      setMenu(toggle.getAttribute('aria-expanded') !== 'true');
     });
 
-    // Close on window click
-    document.addEventListener('click', (e) => {
-      if (!hamburger.contains(e.target) && !navMenu.contains(e.target)) {
-        hamburger.classList.remove('active');
-        navMenu.classList.remove('active');
-      }
+    menu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => setMenu(false));
     });
 
-    // Close on nav link click
-    document.querySelectorAll('.nav-link').forEach(link => {
-      link.addEventListener('click', () => {
-        hamburger.classList.remove('active');
-        navMenu.classList.remove('active');
-      });
+    document.addEventListener('keydown', event => {
+      if (event.key === 'Escape') setMenu(false);
+    });
+
+    window.addEventListener('resize', () => {
+      if (window.innerWidth > 860) setMenu(false);
     });
   }
 
-  // Smooth scrolling for anchor links
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-      e.preventDefault();
-      const target = document.querySelector(this.getAttribute('href'));
-      if (target) {
-        target.scrollIntoView({
-          behavior: 'smooth',
-          block: 'start'
-        });
-      }
-    });
-  });
-
-  // Nav active class on scroll
-  window.addEventListener('scroll', () => {
-    let current = '';
-    const sections = document.querySelectorAll('section[id]');
-    const navLinks = document.querySelectorAll('.nav-link[href^="#"]');
-    
-    sections.forEach(section => {
-      const sectionTop = section.offsetTop;
-      const sectionHeight = section.clientHeight;
-      if (scrollY >= (sectionTop - 200)) {
-        current = section.getAttribute('id');
-      }
-    });
-
-    navLinks.forEach(link => {
-      link.classList.remove('active');
-      if (link.getAttribute('href') === `#${current}`) {
-        link.classList.add('active');
-      }
-    });
-  });
-
-// Skills highlight animation - subtle green loop every second
-  const skillsItems = document.querySelectorAll('.skills-tree__item');
-  if (skillsItems.length > 0) {
-    function highlightSkills() {
-      skillsItems.forEach(item => {
-        item.style.color = 'var(--text-secondary)';
-        item.style.textShadow = 'none';
-      });
-      
-      let currentIndex = 0;
-      const interval = setInterval(() => {
-        skillsItems.forEach(item => {
-          item.style.color = 'var(--text-secondary)';
-          item.style.textShadow = 'none';
-        });
-        
-        const currentItem = skillsItems[currentIndex];
-        currentItem.style.color = '#00ff88';
-        currentItem.style.textShadow = '0 0 12px rgba(0, 255, 136, 0.5)';
-        
-        currentIndex = (currentIndex + 1) % skillsItems.length;
-      }, 1000);
-
-      // Stop on scroll away
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (!entry.isIntersecting) {
-            clearInterval(interval);
-            skillsItems.forEach(item => {
-              item.style.color = 'var(--text-primary)';
-              item.style.textShadow = 'none';
-            });
-          } else {
-            // Restart if scrolled back
-            clearInterval(interval);
-            highlightSkills();
-          }
-        });
-      });
-      
-      const skillsSection = document.querySelector('.skills-tree');
-      if (skillsSection) observer.observe(skillsSection);
-    }
-    
-    // Start when visible
-    const skillsObserver = new IntersectionObserver((entries) => {
+  const revealItems = document.querySelectorAll('.reveal');
+  if (reduceMotion || !('IntersectionObserver' in window)) {
+    revealItems.forEach(item => item.classList.add('is-visible'));
+  } else {
+    const revealObserver = new IntersectionObserver(entries => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
-          highlightSkills();
-          skillsObserver.unobserve(entry.target);
+          entry.target.classList.add('is-visible');
+          revealObserver.unobserve(entry.target);
         }
       });
-    });
-    
-    const skillsSection = document.querySelector('.skills-tree');
-    if (skillsSection) skillsObserver.observe(skillsSection);
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+    revealItems.forEach(item => revealObserver.observe(item));
   }
 
-  // Card hover enhancements
-  document.querySelectorAll('.card, .project-card').forEach(card => {
-    card.addEventListener('mouseenter', () => {
-      card.style.transform = 'translateY(-6px)';
-    });
-    card.addEventListener('mouseleave', () => {
-      card.style.transform = 'translateY(0)';
-    });
-  });
+  const scrambleEl = document.querySelector('.scramble');
+  if (scrambleEl && !reduceMotion) {
+    const finalText = scrambleEl.dataset.text || scrambleEl.textContent;
+    const glyphs = '0123456789ABCDEF';
+    const lockWidth = () => {
+      scrambleEl.style.width = `${Math.ceil(scrambleEl.getBoundingClientRect().width)}px`;
+    };
+    if (document.fonts && document.fonts.ready) {
+      document.fonts.ready.then(lockWidth);
+    } else {
+      lockWidth();
+    }
+    const scrambleOnce = () => {
+      let step = 0;
+      const total = 12;
+      const interval = setInterval(() => {
+        step += 1;
+        if (step >= total) {
+          scrambleEl.textContent = finalText;
+          clearInterval(interval);
+          return;
+        }
+        scrambleEl.textContent = finalText
+          .split('')
+          .map((letter, index) => (index < step / 2 ? letter : glyphs[Math.floor(Math.random() * glyphs.length)]))
+          .join('');
+      }, 45);
+    };
+    window.setTimeout(() => {
+      scrambleOnce();
+      window.setInterval(scrambleOnce, 5200);
+    }, 900);
+  }
 
-  // Form handling (prevent default, simulate send)
-  const form = document.querySelector('.contact-form');
+  const navLinks = Array.from(document.querySelectorAll('.nav-link'));
+  const spyTargets = navLinks
+    .map(link => document.querySelector(link.getAttribute('href')))
+    .filter(Boolean);
+
+  if (spyTargets.length && 'IntersectionObserver' in window) {
+    const spy = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        navLinks.forEach(link => {
+          link.classList.toggle('active', link.getAttribute('href') === `#${entry.target.id}`);
+        });
+      });
+    }, { rootMargin: '-42% 0px -52% 0px', threshold: 0 });
+
+    spyTargets.forEach(section => spy.observe(section));
+  }
+
+  const numberFormat = new Intl.NumberFormat('en', { notation: 'compact', maximumFractionDigits: 1 });
+  const relativeFormat = new Intl.RelativeTimeFormat('en', { numeric: 'auto' });
+
+  function relativeTime(date) {
+    const seconds = Math.round((date.getTime() - Date.now()) / 1000);
+    const units = [
+      ['year', 31536000],
+      ['month', 2592000],
+      ['week', 604800],
+      ['day', 86400],
+      ['hour', 3600],
+      ['minute', 60]
+    ];
+    for (const [unit, size] of units) {
+      if (Math.abs(seconds) >= size || unit === 'minute') {
+        return relativeFormat.format(Math.round(seconds / size), unit);
+      }
+    }
+    return 'just now';
+  }
+
+  function setText(selector, value) {
+    document.querySelectorAll(selector).forEach(node => {
+      node.textContent = value;
+    });
+  }
+
+  const GITHUB_USER = 'Jacked-cpu';
+  const CACHE_KEY = 'atg-github-stats-v1';
+  const CACHE_TTL = 10 * 60 * 1000;
+
+  function applyGithub(user, repos) {
+    if (!user || !Array.isArray(repos)) return;
+    const sorted = [...repos].sort((a, b) => new Date(b.pushed_at) - new Date(a.pushed_at));
+
+    setText('[data-live="repos"]', String(user.public_repos ?? sorted.length));
+    if (sorted[0]) {
+      setText('[data-live="latestRepo"]', sorted[0].name);
+      setText('[data-live="lastPush"]', relativeTime(new Date(sorted[0].pushed_at)));
+      const updated = document.querySelector('[data-repo-updated]');
+      if (updated) updated.textContent = `Updated ${relativeTime(new Date(sorted[0].pushed_at))}`;
+    }
+
+    const languages = repos.reduce((acc, repo) => {
+      if (repo.language) acc[repo.language] = (acc[repo.language] || 0) + 1;
+      return acc;
+    }, {});
+    const topLanguage = Object.keys(languages).sort((a, b) => languages[b] - languages[a])[0];
+    if (topLanguage) setText('[data-live="language"]', topLanguage);
+
+    document.querySelectorAll('[data-repo]').forEach(card => {
+      const repo = sorted.find(item => item.full_name.toLowerCase() === card.dataset.repo.toLowerCase());
+      if (!repo) return;
+      const stars = card.querySelector('[data-repo-stars]');
+      if (stars) {
+        if (repo.stargazers_count > 0) {
+          stars.textContent = `${numberFormat.format(repo.stargazers_count)} stars`;
+        } else if (repo.fork) {
+          stars.textContent = 'Fork';
+        } else {
+          stars.textContent = 'Public';
+        }
+      }
+      const updated = card.querySelector('[data-repo-updated]');
+      if (updated) updated.textContent = `Updated ${relativeTime(new Date(repo.pushed_at))}`;
+    });
+  }
+
+  async function loadGithubStats() {
+    try {
+      const cached = JSON.parse(sessionStorage.getItem(CACHE_KEY) || 'null');
+      if (cached && Date.now() - cached.timestamp < CACHE_TTL) {
+        applyGithub(cached.user, cached.repos);
+        return;
+      }
+    } catch (error) {
+      /* cache unavailable or malformed */
+    }
+
+    try {
+      const headers = { Accept: 'application/vnd.github+json' };
+      const [userResponse, reposResponse] = await Promise.all([
+        fetch(`https://api.github.com/users/${GITHUB_USER}`, { headers }),
+        fetch(`https://api.github.com/users/${GITHUB_USER}/repos?per_page=100&sort=pushed`, { headers })
+      ]);
+      if (!userResponse.ok || !reposResponse.ok) return;
+      const user = await userResponse.json();
+      const repos = await reposResponse.json();
+      applyGithub(user, repos);
+      try {
+        sessionStorage.setItem(CACHE_KEY, JSON.stringify({ timestamp: Date.now(), user, repos }));
+      } catch (error) {
+        /* storage may be full or blocked */
+      }
+    } catch (error) {
+      /* keep the static fallback values */
+    }
+  }
+
+  loadGithubStats();
+
+  async function loadVisitCount() {
+    const el = document.querySelector('[data-visitor-count]');
+    if (!el) return;
+    let counted = false;
+    try {
+      counted = sessionStorage.getItem('atg-visit-counted') === '1';
+    } catch (error) {
+      /* storage may be blocked */
+    }
+    const action = counted ? 'get' : 'hit';
+    try {
+      const response = await fetch(`https://countapi.mileshilliard.com/api/v1/${action}/atg-portfolio-visits-2026`, { cache: 'no-store' });
+      if (!response.ok) throw new Error('counter unavailable');
+      const data = await response.json();
+      const value = Number(data.value);
+      el.textContent = Number.isFinite(value) ? String(value).padStart(6, '0') : '------';
+      try {
+        sessionStorage.setItem('atg-visit-counted', '1');
+      } catch (error) {
+        /* storage may be blocked */
+      }
+    } catch (error) {
+      /* keep placeholder */
+    }
+  }
+
+  loadVisitCount();
+
+  const form = document.getElementById('contactForm');
+  const formNote = document.getElementById('formNote');
   if (form) {
-    form.addEventListener('submit', (e) => {
-      e.preventDefault();
-      const button = form.querySelector('button');
-      const originalText = button.textContent;
-      button.textContent = 'Sending...';
-      button.disabled = true;
-      
+    form.addEventListener('submit', event => {
+      event.preventDefault();
+      if (!form.checkValidity()) {
+        form.reportValidity();
+        return;
+      }
+      const data = new FormData(form);
+      const name = String(data.get('name') || '').trim();
+      const email = String(data.get('email') || '').trim();
+      const message = String(data.get('message') || '').trim();
+      const subject = encodeURIComponent(`Portfolio enquiry from ${name}`);
+      const body = encodeURIComponent(`${message}\n\nFrom: ${name}\nReply to: ${email}`);
+      if (formNote) formNote.textContent = 'Opening your email app with the message ready to send.';
+      window.location.href = `mailto:atgodoch@gmail.com?subject=${subject}&body=${body}`;
       setTimeout(() => {
-        button.textContent = 'Sent! ✓';
-        setTimeout(() => {
-          button.textContent = originalText;
-          button.disabled = false;
-          form.reset();
-        }, 2000);
-      }, 1500);
+        if (formNote) formNote.textContent = 'Opens your email app with the message ready to send.';
+        form.reset();
+      }, 2500);
     });
   }
 });
